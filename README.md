@@ -1,4 +1,4 @@
-As a user, I want to sign up so that I can play tic tac tor.
+As a user, I want to sign up so that I can play tic tac toe.
 As a user, I want to play tic tac toe on a board
 As a user, I want to see how many games played
 
