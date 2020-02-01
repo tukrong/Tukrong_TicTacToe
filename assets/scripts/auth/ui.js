@@ -17,6 +17,10 @@ const onSignInSuccess = function (response) {
   $('#message').text(response.user.email + ' successfully logged in!')
   $('#sign-in').trigger('reset')
   store.user = response.user
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#change-password').show()
 }
 const onSignInFailure = function (response) {
   $('#message').text('fail to log in!')
@@ -30,6 +34,9 @@ const onChangePasswordFailure = function (response) {
 }
 const onSignOutSuccess = function (response) {
   $('#message').text('signed out!')
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('change-password').hide()
   store.user = null
 }
 module.exports = {

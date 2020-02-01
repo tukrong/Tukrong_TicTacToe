@@ -40,7 +40,6 @@ const onSignOut = function (event) {
     .then(ui.onSignOutSuccess)
 }
 
-const currentPlayer =
 module.exports = {
   onSignUp,
   onSignIn,

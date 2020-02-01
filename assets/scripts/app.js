@@ -7,10 +7,18 @@ const authEvents = require('./auth/events')
 // require('./example')
 
 $(() => {
-  $('.box').on('click', function (currentPlayer) {
-    $(currentPlayer.target).text('X')
+  let currentPlayer = 'X'
+  $('.box').on('click', function (event) {
+    $(event.target).off()
+    $(event.target).text(currentPlayer)
+    if (currentPlayer === 'X') {
+      currentPlayer = 'O'
+    } else {
+      currentPlayer = 'X'
+    }
   })
-
+  $('#sign-out').hide()
+  $('#change-password').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
