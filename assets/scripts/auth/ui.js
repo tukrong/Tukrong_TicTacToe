@@ -36,7 +36,7 @@ const onSignOutSuccess = function (response) {
   $('#message').text('signed out!')
   $('#sign-up').show()
   $('#sign-in').show()
-  $('change-password').hide()
+  $('#change-password').hide()
   store.user = null
 }
 module.exports = {

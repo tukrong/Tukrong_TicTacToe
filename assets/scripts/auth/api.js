@@ -37,11 +37,19 @@ const signOut = function (data) {
     }
   })
 }
+const startGame = function (box) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST'
+
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  startGame
 
 }
