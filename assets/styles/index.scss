@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+.sign-up-form {
+  display: flex;
+  align-items: center;
+}
+
 .box {
   border: 1px solid;
   height: 100px;

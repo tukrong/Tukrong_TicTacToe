@@ -37,11 +37,36 @@ const signOut = function (data) {
     }
   })
 }
-const startGame = function (box) {
+
+const startGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
-    method: 'POST'
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
+  })
+}
 
+const updateClick = function (clickData) {
+  console.log(clickData)
+  console.log(store)
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: clickData,
+          value: store.currentPlayer
+        },
+        over: false
+      }
+    }
   })
 }
 
@@ -50,6 +75,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  startGame
+  startGame,
+  updateClick
 
 }

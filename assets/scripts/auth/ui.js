@@ -37,8 +37,18 @@ const onSignOutSuccess = function (response) {
   $('#sign-up').show()
   $('#sign-in').show()
   $('#change-password').hide()
+  $('#sign-out').hide()
   store.user = null
 }
+const onStartGameSuccess = function (response) {
+  $('#message').text('Start game X goes first')
+  store.game = response.game
+}
+
+const onClickUpdateSuccess = function (response) {
+  $('#message').text(store.currentPlayer + ' turn')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -46,5 +56,7 @@ module.exports = {
   onSignInFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
-  onSignOutSuccess
+  onSignOutSuccess,
+  onStartGameSuccess,
+  onClickUpdateSuccess
 }
