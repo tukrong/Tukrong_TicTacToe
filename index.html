@@ -17,39 +17,34 @@
         <p id='message'></p>
 
       <form class='sign-up-form' id='sign-up'>
-        <fieldset>
+        <fieldset class='sign-up-form'>
           <legend>Sign up!</legend>
           <input name='credentials[email]' type='email' placeholder='email@email.com' >
+          <br>
           <input name='credentials[password]' type='password' placeholder='password'>
+          <br>
           <input name='credentials[password_confirmation]' type='password' placeholder='password'>
+          <br>
           <input type='submit' value='sign up' >
         </fieldset>
       </form>
 
-        <form id='sign-in'>
+        <form class='sign-in-form' id='sign-in'>
           <fieldset>
             <legend>Sign in here</legend>
               <input name='credentials[email]' type='email' placeholder='example@example.com'>
+              <br>
               <input name='credentials[password]' type='password' placeholder='password'>
+              <br>
               <input type='submit' value='sign in'>
           </fieldset>
         </form>
         <br>
 
-        <form id='change-password'>
-          <fieldset>
-            <legend>Change password</legend>
-              <input name='passwords[old]' type='password' placeholder='old password'>
-              <input name='passwords[new]' type='password' placeholder='new password'>
-              <input type='submit' value='change password'>
-          </fieldset>
-        </form>
 
-        <form id='sign-out'>
-          <input type='submit' value='sign out'>
-        </form>
-
+    <fieldset class='start-game-form'>
       <button id='start-game'>Start Game</button>
+    </fieldset>
       <br>
       <div class='container text-center' id='gameBoard'>
         <div class='row'>
@@ -64,11 +59,27 @@
           <div class='col-4 box' data-cell-index='8' id='8'></div>
         </div>
       </div>
+      <fieldset id='sign-out-form'>
+      <form id='sign-out'>
+        <input type='submit' value='sign out'>
+      </form>
+      </fieldset>
+      <br>
+      <fieldset class='reset-game-form'>
+      <button id='reset-game'>Restart Game</button>
+      </fieldset>
+      <form id='change-password'>
+        <fieldset>
+          <legend>Change password</legend>
+            <input name='passwords[old]' type='password' placeholder='old password'>
+            <input name='passwords[new]' type='password' placeholder='new password'>
+            <input type='submit' value='change password'>
+        </fieldset>
+      </form>
+
     <div class='end-game' id='Winner'>
       <div class='text'></div>
     </div>
-
-<button id='reset-game'>Restart Game</button>
 
 
     </body>

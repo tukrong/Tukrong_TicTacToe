@@ -3,7 +3,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const app = require('./../app')
+const store = require('./../store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -56,6 +56,16 @@ const onClickUpdateGame = function (event) {
     .then(ui.onClickUpdateSuccess)
     .catch(ui.onClickUpdateFailure)
 }
+const onRestartGame = function (event) {
+  event.preventDefault()
+  $('.box').text('')
+  store.currentPlayer = 'X'
+  for (let i = 0; i < store.gameBoard.length; i++) {
+    store.gameBoard[i] = ''
+  }
+  api.restartGame()
+    .then(ui.onRestartGameSuccess)
+}
 
 module.exports = {
   onSignUp,
@@ -63,5 +73,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onStartGame,
-  onClickUpdateGame
+  onClickUpdateGame,
+  onRestartGame
 }

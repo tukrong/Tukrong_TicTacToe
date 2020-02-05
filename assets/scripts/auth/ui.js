@@ -21,6 +21,7 @@ const onSignInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#change-password').show()
+  $('#gameBoard').show()
 }
 const onSignInFailure = function (response) {
   $('#message').text('fail to log in!')
@@ -38,15 +39,23 @@ const onSignOutSuccess = function (response) {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('#gameBoard').hide()
+  $('#star')
   store.user = null
 }
 const onStartGameSuccess = function (response) {
   $('#message').text('Start game X goes first')
+  $('#reset-game').show()
   store.game = response.game
 }
 
 const onClickUpdateSuccess = function (response) {
   $('#message').text(store.currentPlayer + ' turn')
+}
+
+const onRestartGameSuccess = function (response) {
+  $('#message').text('New Game')
+  store.game = response.game
 }
 
 module.exports = {
@@ -58,5 +67,6 @@ module.exports = {
   onChangePasswordFailure,
   onSignOutSuccess,
   onStartGameSuccess,
-  onClickUpdateSuccess
+  onClickUpdateSuccess,
+  onRestartGameSuccess
 }

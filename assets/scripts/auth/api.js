@@ -70,12 +70,26 @@ const updateClick = function (clickData) {
   })
 }
 
+const restartGame = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   startGame,
-  updateClick
+  updateClick,
+  restartGame
 
 }
