@@ -50,8 +50,6 @@ const startGame = function () {
 }
 
 const updateClick = function (clickData) {
-  console.log(clickData)
-  console.log(store)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',

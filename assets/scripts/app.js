@@ -12,6 +12,8 @@ $(() => {
     '', '', '',
     '', '', ''
   ]
+  store.winner = null
+  store.draw = null
   // store currentPlayer from store file to use in the api
   store.currentPlayer = 'X'
   $('.box').on('click', function (event) {
@@ -27,9 +29,8 @@ $(() => {
         store.currentPlayer = 'X'
       }
     }
-    checkWinner()
   })
-  const checkDraw = function (event) {
+  const checkDraw = function () {
     if (store.gameBoard.length === 9) {
     }
   }
@@ -51,7 +52,6 @@ $(() => {
 (store.gameBoard[2] === 'X' && store.gameBoard[5] === 'X' && store.gameBoard[8] === 'X') ||
 (store.gameBoard[2] === 'O' && store.gameBoard[5] === 'O' && store.gameBoard[8] === 'O')
     ) {
-      checkDraw()
     }
   }
   // only run if the game is not over
@@ -66,4 +66,6 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#gameBoard').hide()
   $('#reset-game').hide()
+  $('#start-game-button').hide()
+  $('#winner').hide()
 })

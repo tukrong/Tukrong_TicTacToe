@@ -42,7 +42,7 @@
         <br>
 
 
-    <fieldset class='start-game-form'>
+    <fieldset class='start-game-form' id='start-game-button'>
       <button id='start-game'>Start Game</button>
     </fieldset>
       <br>
@@ -59,15 +59,17 @@
           <div class='col-4 box' data-cell-index='8' id='8'></div>
         </div>
       </div>
-      <fieldset id='sign-out-form'>
+      <br>
+      <fieldset class='reset-game-form' id='re'>
+      <button id='reset-game'>Restart Game</button>
+      </fieldset>
+      <br>
+      <fieldset class='sign-out-form'>
       <form id='sign-out'>
         <input type='submit' value='sign out'>
       </form>
       </fieldset>
-      <br>
-      <fieldset class='reset-game-form'>
-      <button id='reset-game'>Restart Game</button>
-      </fieldset>
+
       <form id='change-password'>
         <fieldset>
           <legend>Change password</legend>
@@ -77,8 +79,8 @@
         </fieldset>
       </form>
 
-    <div class='end-game' id='Winner'>
-      <div class='text'></div>
+    <div class='end-game' id='winner'>
+      <div class='text' id='game-winner'></div>
     </div>
 
 
