@@ -12,6 +12,7 @@ const onSignUpFailure = function (response) {
   $('#message').text('Fail to sign up!')
   $('#message').removeClass()
   $('#message').addClass('fail-message')
+  $('#sign-up').trigger('reset')
 }
 const onSignInSuccess = function (response) {
   $('#message').text(response.user.email + ' successfully logged in!')
@@ -22,10 +23,12 @@ const onSignInSuccess = function (response) {
   $('#sign-out').show()
   $('#change-password').show()
   $('#gameBoard').show()
-  $('#start-game-button').show()
+  // $('#start-game-button').show()
+  $('#reset-game').show()
 }
 const onSignInFailure = function (response) {
   $('#message').text('fail to log in!')
+  $('#sign-in').trigger('reset')
 }
 const onChangePasswordSuccess = function (response) {
   $('#message').text('change password!')
@@ -33,6 +36,7 @@ const onChangePasswordSuccess = function (response) {
 }
 const onChangePasswordFailure = function (response) {
   $('#message').text('fail to change password!')
+  $('#change-password').trigger('reset')
 }
 const onSignOutSuccess = function (response) {
   $('#message').text('signed out!')
@@ -42,7 +46,9 @@ const onSignOutSuccess = function (response) {
   $('#sign-out').hide()
   $('#gameBoard').hide()
   $('#reset-game').hide()
-  $('#start-game-button').hide()
+  $('#change-password').trigger('reset')
+  $('#sign-up').trigger('reset')
+  // $('#start-game-button').hide()
   store.user = null
 }
 const onStartGameSuccess = function (response) {
