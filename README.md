@@ -6,9 +6,7 @@ those win sequences. If both players manage to not win, then it is a tie.
 
 ## Important Links
 
-- [Other Repo](www.link.com)
-- [Deployed API](www.link.com)
-- [Deployed Client](www.link.com)
+https://tukrong.github.io/Tukrong_TicTacToe/
 
 ## Planning Story
 - Create my user Story
