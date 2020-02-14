@@ -41,6 +41,7 @@ $(() => {
 (store.gameBoard[2] === 'X' && store.gameBoard[5] === 'X' && store.gameBoard[8] === 'X')) {
       $('#message').text('X Winner')
       $('#gameBoard').hide()
+      $('#change-password').trigger('reset')
     } else if ((store.gameBoard[0] === 'O' && store.gameBoard[1] === 'O' && store.gameBoard[2] === 'O') ||
     (store.gameBoard[3] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[5] === 'O') ||
     (store.gameBoard[6] === 'O' && store.gameBoard[7] === 'O' && store.gameBoard[8] === 'O') ||
@@ -51,6 +52,7 @@ $(() => {
     (store.gameBoard[2] === 'O' && store.gameBoard[5] === 'O' && store.gameBoard[8] === 'O')) {
       $('#message').text('O Winner')
       $('#gameBoard').hide()
+      $('#change-password').trigger('reset')
     } else {
       let count = 0
       for (let i = 0; i < store.gameBoard.length; i++) {
