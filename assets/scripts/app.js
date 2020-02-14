@@ -62,6 +62,7 @@ $(() => {
       }
       if (count === 9) {
         $('#message').text('Tie, press new game to start  ')
+        $('#change-password').trigger('reset')
       }
     }
   }
