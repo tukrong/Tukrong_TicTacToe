@@ -1,10 +1,50 @@
-As a user, I want to sign up so that I can play tic tac toe.
-As a user, I want to play tic tac toe on a board
-As a user, I want to see how many games played
+# Application Title: A Description
+Welcome to my tic tac toe game. The goal of this game is to get X's and O's three in a row,
+column, and diagonally. Keep in mind that you also have to stop the other player from achieving
+those win sequences. If both players manage to not win, then it is a tie.
 
 
-As a developer I want to layout the html page
-As a developer I want to have players click on a game board to play tic tac toe
-as a developer I want to display winner when a player wins
-As a developer I want to keep track of the players move
-As a developer I want to keep track of how many games played
+## Important Links
+
+- [Other Repo](www.link.com)
+- [Deployed API](www.link.com)
+- [Deployed Client](www.link.com)
+
+## Planning Story
+- Create my user Story
+- Create a layout using wireframe.
+- Create my html page so I can know which class, ids, and element to use.
+- Each button should have a function such as sumbitting a sign up info, sign in,
+sign out, new game, and change password.
+- Create a game board for the player to play tic tac toe.
+- When the player wins the game a message should display the winner and stop the players
+from clicking on the gameboard.
+- Create a button or display the amount of games played.
+
+
+### User Stories
+
+- As a user I want to create a new email sign up.
+- As a user I want sign in using my email and password.
+- As a user I want to sign in and be able to play tic tac toe.
+- As a user I want to be able to change my password after logging in.
+- As a user I want to be able to start a new game anytime.
+- As a user I want to sign out.
+
+### Technologies Used
+
+- jQuery
+- HTML/CSS
+- Bootstrap
+- Javascript
+
+### Unsolved Problems
+
+-
+- Would like to eventually ....
+
+## Images
+
+---
+
+#### Wireframe:

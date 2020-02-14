@@ -52,11 +52,20 @@ $(() => {
 (store.gameBoard[2] === 'X' && store.gameBoard[5] === 'X' && store.gameBoard[8] === 'X') ||
 (store.gameBoard[2] === 'O' && store.gameBoard[5] === 'O' && store.gameBoard[8] === 'O')
     ) {
+      if (store.winner) {
+winGame()
+      }
     }
+  }
+
+  const winGame = function () {
+if (store.winner) {
+
+}
   }
   // only run if the game is not over
 
-  $('#start-game').on('click', authEvents.onStartGame)
+  // $('#start-game').on('click', authEvents.onStartGame)
   $('#reset-game').on('click', authEvents.onRestartGame)
   $('#sign-out').hide()
   $('#change-password').hide()
@@ -66,6 +75,6 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#gameBoard').hide()
   $('#reset-game').hide()
-  $('#start-game-button').hide()
+  // $('#start-game-button').hide()
   $('#winner').hide()
 })

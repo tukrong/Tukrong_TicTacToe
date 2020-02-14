@@ -81,6 +81,13 @@ const restartGame = function () {
   })
 }
 
+const getGameStatus = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -88,6 +95,7 @@ module.exports = {
   signOut,
   startGame,
   updateClick,
-  restartGame
+  restartGame,
+  getGameStatus
 
 }
