@@ -67,6 +67,12 @@ const onRestartGame = function (event) {
     .then(ui.onRestartGameSuccess)
 }
 
+const onGameStatus = function (event) {
+  event.preventDefault()
+  api.getGameStatus()
+    .then(ui.onGameStatusSuccessful)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -74,5 +80,6 @@ module.exports = {
   onSignOut,
   onStartGame,
   onClickUpdateGame,
-  onRestartGame
+  onRestartGame,
+  onGameStatus
 }

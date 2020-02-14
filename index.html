@@ -15,6 +15,8 @@
       <h1>Tic Tac Toe</h1>
 
         <p id='message'></p>
+        <br>
+        <p id='startGameMessage'></p>
 
       <form class='sign-up-form' id='sign-up'>
         <fieldset class='sign-up-form'>
@@ -59,9 +61,12 @@
       <button id='reset-game'>New Game</button>
       </fieldset>
       <br>
+        <fieldset class='gameStat'>
+        <button id='gameStatus'>Game Status</button>
+        </fieldset>
       <fieldset class='sign-out-form'>
       <form id='sign-out'>
-        <input type='submit' value='sign out'>
+        <input type='submit' value='Sign out'>
       </form>
       </fieldset>
 
@@ -73,11 +78,6 @@
             <input type='submit' value='change password'>
         </fieldset>
       </form>
-
-    <div class='end-game' id='winner'>
-      <div class='text' id='game-winner'></div>
-    </div>
-
 
     </body>
 </html>
