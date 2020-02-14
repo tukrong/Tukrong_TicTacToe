@@ -28,7 +28,6 @@ const onSignInSuccess = function (response) {
 }
 const onSignInFailure = function (response) {
   $('#message').text('fail to log in!')
-  $('#sign-in').trigger('reset')
 }
 const onChangePasswordSuccess = function (response) {
   $('#message').text('change password!')
