@@ -40,7 +40,7 @@ from clicking on the gameboard.
 
 ### Unsolved Problems
 
-- Would like to eventually ....
+- Make the layout and design 
 
 ## Images
 
