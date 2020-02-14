@@ -57,6 +57,7 @@ const onRestartGameSuccess = function (response) {
   $('#gameBoard').show()
   $('#startGameMessage').hide()
   $('#gameStatus').show()
+  $('#change-password').trigger('reset')
   store.game = response.game
 }
 
