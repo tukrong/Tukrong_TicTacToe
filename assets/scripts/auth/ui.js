@@ -22,9 +22,9 @@ const onSignInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#change-password').show()
-  $('#gameBoard').show()
-  // $('#start-game-button').show()
+  $('#gameBoard').hide()
   $('#reset-game').show()
+  $('#startGameMessage').text('Press New Game to Start')
 }
 const onSignInFailure = function (response) {
   $('#message').text('fail to log in!')
@@ -48,22 +48,20 @@ const onSignOutSuccess = function (response) {
   $('#reset-game').hide()
   $('#change-password').trigger('reset')
   $('#sign-up').trigger('reset')
-  // $('#start-game-button').hide()
+  $('#gameStatus').hide()
   store.user = null
-}
-const onStartGameSuccess = function (response) {
-  $('#message').text('Start game X goes first')
-  $('#reset-game').show()
-  store.game = response.game
-}
-
-const onClickUpdateSuccess = function (response) {
-  $('#message').text(store.currentPlayer + ' turn')
 }
 
 const onRestartGameSuccess = function (response) {
-  $('#message').text('New Game')
+  $('#message').text('New Game X goes first')
+  $('#gameBoard').show()
+  $('#startGameMessage').hide()
+  $('#gameStatus').show()
   store.game = response.game
+}
+
+const onGameStatusSuccessful = function (data) {
+  $('#message').text("you've played" + data.games.length)
 }
 
 module.exports = {
@@ -74,7 +72,6 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onStartGameSuccess,
-  onClickUpdateSuccess,
-  onRestartGameSuccess
+  onRestartGameSuccess,
+  onGameStatusSuccessful
 }

@@ -12,8 +12,6 @@ $(() => {
     '', '', '',
     '', '', ''
   ]
-  store.winner = null
-  store.draw = null
   // store currentPlayer from store file to use in the api
   store.currentPlayer = 'X'
   $('.box').on('click', function (event) {
@@ -28,44 +26,44 @@ $(() => {
       } else {
         store.currentPlayer = 'X'
       }
+      $('#message').text(store.currentPlayer + ' turn')
+      checkWinner()
     }
   })
-  const checkDraw = function () {
-    if (store.gameBoard.length === 9) {
-    }
-  }
   const checkWinner = function () {
     if ((store.gameBoard[0] === 'X' && store.gameBoard[1] === 'X' && store.gameBoard[2] === 'X') ||
-(store.gameBoard[0] === 'O' && store.gameBoard[1] === 'O' && store.gameBoard[2] === 'O') ||
 (store.gameBoard[3] === 'X' && store.gameBoard[4] === 'X' && store.gameBoard[5] === 'X') ||
-(store.gameBoard[3] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[5] === 'O') ||
 (store.gameBoard[6] === 'X' && store.gameBoard[7] === 'X' && store.gameBoard[8] === 'X') ||
-(store.gameBoard[6] === 'O' && store.gameBoard[7] === 'O' && store.gameBoard[8] === 'O') ||
 (store.gameBoard[0] === 'X' && store.gameBoard[4] === 'X' && store.gameBoard[8] === 'X') ||
-(store.gameBoard[0] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[8] === 'O') ||
 (store.gameBoard[2] === 'X' && store.gameBoard[4] === 'X' && store.gameBoard[6] === 'X') ||
-(store.gameBoard[2] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[6] === 'O') ||
 (store.gameBoard[0] === 'X' && store.gameBoard[3] === 'X' && store.gameBoard[6] === 'X') ||
-(store.gameBoard[0] === 'O' && store.gameBoard[3] === 'O' && store.gameBoard[6] === 'O') ||
 (store.gameBoard[1] === 'X' && store.gameBoard[4] === 'X' && store.gameBoard[7] === 'X') ||
-(store.gameBoard[1] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[7] === 'O') ||
-(store.gameBoard[2] === 'X' && store.gameBoard[5] === 'X' && store.gameBoard[8] === 'X') ||
-(store.gameBoard[2] === 'O' && store.gameBoard[5] === 'O' && store.gameBoard[8] === 'O')
-    ) {
-      if (store.winner) {
-winGame()
+(store.gameBoard[2] === 'X' && store.gameBoard[5] === 'X' && store.gameBoard[8] === 'X')) {
+      $('#message').text('X Winner')
+      $('#gameBoard').hide()
+    } else if ((store.gameBoard[0] === 'O' && store.gameBoard[1] === 'O' && store.gameBoard[2] === 'O') ||
+    (store.gameBoard[3] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[5] === 'O') ||
+    (store.gameBoard[6] === 'O' && store.gameBoard[7] === 'O' && store.gameBoard[8] === 'O') ||
+    (store.gameBoard[0] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[8] === 'O') ||
+    (store.gameBoard[2] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[6] === 'O') ||
+    (store.gameBoard[0] === 'O' && store.gameBoard[3] === 'O' && store.gameBoard[6] === 'O') ||
+    (store.gameBoard[1] === 'O' && store.gameBoard[4] === 'O' && store.gameBoard[7] === 'O') ||
+    (store.gameBoard[2] === 'O' && store.gameBoard[5] === 'O' && store.gameBoard[8] === 'O')) {
+      $('#message').text('O Winner')
+      $('#gameBoard').hide()
+    } else {
+      let count = 0
+      for (let i = 0; i < store.gameBoard.length; i++) {
+        if (store.gameBoard[i] === 'O' || store.gameBoard[i] === 'X') {
+          count++
+        }
+      }
+      if (count === 9) {
+        $('#message').text('Tie, press new game to start  ')
       }
     }
   }
 
-  const winGame = function () {
-if (store.winner) {
-
-}
-  }
-  // only run if the game is not over
-
-  // $('#start-game').on('click', authEvents.onStartGame)
   $('#reset-game').on('click', authEvents.onRestartGame)
   $('#sign-out').hide()
   $('#change-password').hide()
@@ -75,6 +73,6 @@ if (store.winner) {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#gameBoard').hide()
   $('#reset-game').hide()
-  // $('#start-game-button').hide()
-  $('#winner').hide()
+  $('#gameStatus').hide()
+  $('#gameStatus').on('click', authEvents.onGameStatus)
 })

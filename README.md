@@ -40,7 +40,6 @@ from clicking on the gameboard.
 
 ### Unsolved Problems
 
--
 - Would like to eventually ....
 
 ## Images
