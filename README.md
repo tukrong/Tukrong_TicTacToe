@@ -28,6 +28,7 @@ from clicking on the gameboard.
 - As a user I want to be able to change my password after logging in.
 - As a user I want to be able to start a new game anytime.
 - As a user I want to sign out.
+- As a user I want to check how many games I played.
 
 ### Technologies Used
 
@@ -38,7 +39,8 @@ from clicking on the gameboard.
 
 ### Unsolved Problems
 
-- Make the layout and design 
+- Make the layout and design.
+
 
 ## Images
 
