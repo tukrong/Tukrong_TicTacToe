@@ -41,7 +41,4 @@ from clicking on the gameboard.
 - Make the layout and design 
 
 ## Images
-
----
-
-#### Wireframe:
+![](images/Screen Shot 2020-02-16 at 11.36.52 AM.png)
