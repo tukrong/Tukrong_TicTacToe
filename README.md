@@ -6,7 +6,16 @@ those win sequences. If both players manage to not win, then it is a tie.
 
 ## Important Links
 
+Deployment link
+
 https://tukrong.github.io/Tukrong_TicTacToe/
+
+Github
+
+https://github.com/tukrong/Tukrong_TicTacToe
+
+
+
 
 ## Planning Story
 - Create my user Story
@@ -36,6 +45,7 @@ from clicking on the gameboard.
 - HTML/CSS
 - Bootstrap
 - Javascript
+- AJAX
 
 ### Unsolved Problems
 
